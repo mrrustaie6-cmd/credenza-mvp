@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Credenza — Portable Financial Identity</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#101B2D;
@@ -168,6 +168,119 @@
   @media (prefers-reduced-motion: reduce){
     *{animation:none !important; transition:none !important;}
   }
+
+  /* ===== v2 additions ===== */
+  .brand{font-family:'Plus Jakarta Sans', sans-serif; font-weight:700; letter-spacing:0.01em;}
+  .btn-primary{box-shadow:0 0 0 0 rgba(60,110,100,0); transition:box-shadow .25s ease, background .2s ease;}
+  .btn-primary:hover{box-shadow:0 4px 22px -4px rgba(173,138,84,0.55);}
+
+  .view-toggle{display:inline-flex; border:1px solid var(--line); border-radius:20px; padding:3px; margin-bottom:22px; background:var(--white);}
+  .view-toggle button{
+    font-family:'IBM Plex Mono'; font-size:11.5px; letter-spacing:.04em; text-transform:uppercase;
+    padding:7px 16px; border-radius:16px; border:none; background:transparent; color:var(--text-dim); cursor:pointer;
+  }
+  .view-toggle button.active{background:var(--ink); color:var(--white);}
+
+  .hero-mesh{position:absolute; inset:0; z-index:0; opacity:.5; pointer-events:none;}
+  header.hero{position:relative; overflow:hidden;}
+  header.hero > .wrap{position:relative; z-index:1;}
+
+  .trust-badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+  .trust-badges span{
+    font-family:'IBM Plex Mono'; font-size:10px; letter-spacing:.04em; color:var(--text-dim);
+    border:1px solid var(--line); border-radius:20px; padding:5px 10px; display:inline-flex; align-items:center; gap:5px;
+    background:var(--paper);
+  }
+  .trust-badges span::before{content:"✓"; color:var(--teal); font-weight:600;}
+
+  .persona-box{
+    background:#F6F4EC; border:1px dashed var(--brass); border-radius:5px; padding:14px 16px; margin-bottom:18px;
+    font-size:13px; color:var(--text); line-height:1.55;
+  }
+  .persona-box b{color:var(--ink);}
+
+  .sample-link{
+    font-family:'IBM Plex Mono'; font-size:11.5px; color:var(--teal); text-decoration:underline;
+    display:inline-flex; align-items:center; gap:6px; margin-top:10px;
+  }
+
+  .fn{font-size:10px; vertical-align:super; color:var(--brass-dim); cursor:default;}
+  .sources-list{margin-top:26px; padding-top:18px; border-top:1px solid var(--line); font-size:12px; color:var(--text-dim);}
+  .sources-list ol{padding-left:18px; display:flex; flex-direction:column; gap:5px;}
+  .sources-list a{color:var(--teal); text-decoration:underline;}
+
+  .disclaimer-box{
+    background:#FBF2EC; border:1px solid #E3C7A8; border-radius:6px; padding:18px 22px; margin-top:26px;
+  }
+  .disclaimer-box .eyebrow{color:#9A5A2A;}
+  .disclaimer-box .eyebrow::before{background:#9A5A2A;}
+  .disclaimer-box p{font-size:13.5px; color:#5B4634; line-height:1.6;}
+
+  /* architecture */
+  .arch-flow{display:flex; gap:0; align-items:stretch; flex-wrap:wrap;}
+  .arch-box{
+    flex:1; min-width:190px; background:var(--white); border:1px solid var(--line); border-radius:6px;
+    padding:20px 18px; position:relative;
+  }
+  .arch-box + .arch-box{margin-left:18px;}
+  @media (max-width:900px){.arch-box + .arch-box{margin-left:0; margin-top:18px;}}
+  .arch-box .idx{font-family:'IBM Plex Mono'; font-size:11px; color:var(--brass-dim); margin-bottom:10px;}
+  .arch-box h4{font-family:'Fraunces',serif; font-size:15.5px; font-weight:500; color:var(--ink); margin-bottom:8px;}
+  .arch-box p{font-size:12.5px; color:var(--text-dim); line-height:1.5;}
+  .arch-arrow{
+    display:flex; align-items:center; justify-content:center; color:var(--brass); font-size:18px;
+    padding:0 4px; flex:none;
+  }
+  @media (max-width:900px){.arch-arrow{transform:rotate(90deg); padding:8px 0;}}
+  .arch-note{
+    margin-top:22px; border-left:2px solid var(--teal); padding:4px 0 4px 16px; font-size:13px; color:var(--text-dim);
+  }
+
+  /* API demo */
+  .api-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  @media (max-width:860px){.api-grid{grid-template-columns:1fr;}}
+  .code-block{
+    background:var(--ink); border-radius:6px; padding:20px 22px; overflow-x:auto;
+  }
+  .code-block .cb-label{font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:#8FA3B8; margin-bottom:12px;}
+  .code-block pre{font-family:'IBM Plex Mono'; font-size:12px; line-height:1.65; color:#DCE6EC; white-space:pre-wrap; word-break:break-word;}
+  .code-block .k{color:#8FD7C4;}
+  .code-block .s{color:#E0B888;}
+  .code-block .c{color:#7C8A9C;}
+
+  /* metrics */
+  .metrics-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  @media (max-width:860px){.metrics-grid{grid-template-columns:repeat(2,1fr);}}
+  .metric-card{background:var(--white); padding:24px 20px;}
+  .metric-card .n{font-family:'IBM Plex Mono'; font-size:24px; color:var(--ink); font-weight:500; margin-bottom:6px;}
+  .metric-card .l{font-size:12px; color:var(--text-dim); line-height:1.4;}
+
+  /* founder */
+  .founder-wrap{display:grid; grid-template-columns:120px 1fr; gap:28px; align-items:start;}
+  @media (max-width:640px){.founder-wrap{grid-template-columns:1fr;}}
+  .founder-avatar{
+    width:104px; height:104px; border-radius:50%; border:1.6px solid var(--brass);
+    display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-size:30px; color:var(--brass-dim);
+    background:#F6F4EC;
+  }
+  .founder-wrap h3{font-size:19px; margin-bottom:4px;}
+  .founder-wrap .role{font-family:'IBM Plex Mono'; font-size:11.5px; color:var(--text-dim); margin-bottom:14px; letter-spacing:.02em;}
+  .founder-wrap p{font-size:14px; color:var(--text-dim); line-height:1.6; max-width:60ch;}
+
+  /* estonia */
+  .estonia-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:860px){.estonia-grid{grid-template-columns:1fr;}}
+  .estonia-card{border:1px solid var(--line); border-radius:6px; padding:20px 20px; background:var(--white);}
+  .estonia-card h4{font-size:15px; margin-bottom:8px; font-family:'Fraunces',serif; font-weight:500; color:var(--ink);}
+  .estonia-card p{font-size:12.8px; color:var(--text-dim); line-height:1.55;}
+
+  /* compliance */
+  .compliance-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
+  @media (max-width:720px){.compliance-grid{grid-template-columns:1fr;}}
+  .compliance-item{display:flex; gap:12px; align-items:flex-start; border:1px solid var(--line); border-radius:6px; padding:16px 18px; background:var(--white);}
+  .compliance-item .ic{width:26px; height:26px; border-radius:50%; border:1.4px solid var(--teal); color:var(--teal); flex:none; display:flex; align-items:center; justify-content:center; font-size:13px; font-family:'IBM Plex Mono';}
+  .compliance-item h4{font-size:13.5px; margin-bottom:4px; color:var(--ink); font-weight:600; font-family:'IBM Plex Sans';}
+  .compliance-item p{font-size:12.3px; color:var(--text-dim); line-height:1.5;}
 </style>
 </head>
 <body>
@@ -178,30 +291,58 @@
     <div class="navlinks">
       <a href="#demo">Demo</a>
       <a href="#how">How it works</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#api">API</a>
       <a href="#corridors">Corridors</a>
+      <a href="#metrics">Metrics</a>
+      <a href="#founder">Founder</a>
       <a href="#about">Concept note</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
+  <svg class="hero-mesh" viewBox="0 0 1120 520" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <pattern id="meshgrid" width="46" height="46" patternUnits="userSpaceOnUse">
+        <circle cx="1" cy="1" r="1.2" fill="#AD8A54" opacity="0.35"/>
+      </pattern>
+    </defs>
+    <rect width="1120" height="520" fill="url(#meshgrid)"/>
+    <g stroke="#3C6E64" stroke-width="0.6" opacity="0.22">
+      <line x1="60" y1="60" x2="360" y2="170"/>
+      <line x1="360" y1="170" x2="640" y2="80"/>
+      <line x1="640" y1="80" x2="960" y2="220"/>
+      <line x1="360" y1="170" x2="520" y2="360"/>
+      <line x1="960" y1="220" x2="820" y2="420"/>
+    </g>
+    <g fill="#AD8A54" opacity="0.5">
+      <circle cx="60" cy="60" r="2.4"/><circle cx="360" cy="170" r="2.4"/><circle cx="640" cy="80" r="2.4"/>
+      <circle cx="960" cy="220" r="2.4"/><circle cx="520" cy="360" r="2.4"/><circle cx="820" cy="420" r="2.4"/>
+    </g>
+  </svg>
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow">Concept demo — prepared for Startup Estonia</div>
+      <div class="view-toggle" role="group" aria-label="Audience view">
+        <button type="button" id="viewBankBtn" class="active">For banks &amp; lenders</button>
+        <button type="button" id="viewMigrantBtn">For migrants</button>
+      </div>
+      <div class="eyebrow">Cross-border financial identity infrastructure for the credit-invisible</div>
       <h1>Your financial history<br>shouldn't <em>end</em> at the border.</h1>
-      <p class="lead">Credenza turns a newcomer's real financial record — payments, credit conduct, verifiable transaction history — into a portable, consent-based trust profile that a bank in a new country can actually use.</p>
+      <p class="lead" id="leadCopy">Credenza turns a newcomer's real financial record — payments, credit conduct, verifiable transaction history — into a portable, consent-based trust profile that a bank in a new country can actually use.</p>
       <div class="cta-row">
-        <a href="#demo" class="btn btn-primary">Try the trust profile builder</a>
+        <a href="#demo" class="btn btn-primary" id="ctaPrimary">Try the trust profile builder</a>
         <a href="#how" class="btn btn-ghost">How it works</a>
       </div>
       <div class="stat-row">
-        <div class="stat"><div class="n">65–86k</div><div class="l">people leaving Iran for Europe & the Americas, per year</div></div>
-        <div class="stat"><div class="n">0</div><div class="l">international bureaus that can currently serve them</div></div>
+        <div class="stat"><div class="n">~190K<span class="fn">1</span></div><div class="l">net emigrants from Iran in 2024 alone (UN estimate)</div></div>
+        <div class="stat"><div class="n">0</div><div class="l">international bureaus with practical coverage for this corridor</div></div>
         <div class="stat"><div class="n">4</div><div class="l">independent signal sources per profile</div></div>
       </div>
     </div>
 
     <div class="seal-card" id="demo">
+      <div class="persona-box"><b>Sample scenario —</b> Sara, a translator relocating from Tehran to Lisbon, connects a few sources below. This is a mocked walk-through with sample data, not a live account.</div>
       <div class="kicker">Build a sample trust profile</div>
       <div class="sources">
         <div class="source-row on" data-w="28" data-name="docs">
@@ -209,7 +350,7 @@
           <span class="toggle"></span>
         </div>
         <div class="source-row on" data-w="24" data-name="chain">
-          <span class="name"><span class="dot"></span>On-chain transaction history</span>
+          <span class="name"><span class="dot"></span>On-chain transaction history <span style="color:var(--text-dim); font-weight:400;">— supplementary</span></span>
           <span class="toggle"></span>
         </div>
         <div class="source-row" data-w="22" data-name="guarantor">
@@ -228,7 +369,19 @@
           <div class="v" id="tier">Emerging profile</div>
         </div>
       </div>
+      <a href="#" id="whyLink" class="mono" style="display:inline-block; font-size:11.5px; color:var(--brass-dim); margin-top:12px; text-decoration:underline;"><span id="whyPrefix">Why</span> <span id="whyScore">52</span><span id="whySuffix">?</span></a>
+      <div id="breakdown" style="display:none; margin-top:12px; padding-top:12px; border-top:1px dashed var(--line);">
+        <div class="mono" style="font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-dim); margin-bottom:8px;">Illustrative scoring breakdown</div>
+        <div id="breakdownList" style="display:flex; flex-direction:column; gap:6px; font-size:12.5px;"></div>
+        <div style="font-size:11px; color:var(--text-dim); margin-top:10px;">Weights shown are illustrative only; the production scoring model is defined during the pilot with participating banks.</div>
+      </div>
       <div class="seal-note">Illustrative only. In production, each signal is pulled directly from its source with the user's explicit, revocable consent — never typed in by hand.</div>
+      <div class="trust-badges">
+        <span>GDPR-aligned design</span>
+        <span>Encrypted in transit &amp; at rest</span>
+        <span>Non-custodial data layer</span>
+      </div>
+      <a href="sample-trust-report.pdf" target="_blank" class="sample-link">View sample trust report (PDF, illustrative) →</a>
     </div>
   </div>
 </header>
@@ -247,17 +400,96 @@
       <div class="step">
         <div class="idx">02 / Verify</div>
         <h3>Signals cross-checked</h3>
-        <p>Documents, on-chain history, guarantors and registries are checked against each other, not taken at face value.</p>
+        <p>Verified financial records, guarantors and registries are checked against each other, not taken at face value — on-chain history is one additional signal among these, not the core input.</p>
       </div>
       <div class="step">
         <div class="idx">03 / Score</div>
         <h3>Trust profile assembled</h3>
-        <p>A single, explainable index is produced — with a conservative starting limit in low-data corridors.</p>
+        <p>A single, explainable index is produced — every point is traceable to a specific signal — with a conservative starting limit in low-data corridors.</p>
       </div>
       <div class="step">
         <div class="idx">04 / Issue</div>
         <h3>Bank queries via API</h3>
         <p>The destination bank calls Credenza's API at the point of onboarding — no manual paperwork on either side.</p>
+      </div>
+    </div>
+    <div style="margin-top:36px; border:1px solid var(--line); border-radius:6px; padding:22px 26px; background:var(--white);">
+      <div class="eyebrow" style="margin-bottom:10px;">Built for verification, not blind trust</div>
+      <p style="font-size:14px; color:var(--text-dim); max-width:70ch;">Credenza does not ask a bank to trust a score blindly. Each signal behind the index is linked to its source, its verification method and a confidence level. Credenza provides evidence; the bank makes the final underwriting decision.</p>
+    </div>
+  </div>
+</section>
+
+<section id="architecture">
+  <div class="wrap">
+    <div class="eyebrow">System design</div>
+    <h2>Architecture, in four layers</h2>
+    <p class="section-lead">No layer stores more than it needs to. The scoring engine never sees raw documents; the bank never sees raw source data.</p>
+    <div class="arch-flow">
+      <div class="arch-box">
+        <div class="idx">Layer 1</div>
+        <h4>Consent Layer</h4>
+        <p>Per-source, revocable authorization. Every data pull is logged against an explicit user grant — nothing is fetched by default.</p>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-box">
+        <div class="idx">Layer 2</div>
+        <h4>Corridor Verification Engine</h4>
+        <p>Source-specific adapters extract and cross-check signals (documents, guarantors, registries, on-chain history) against each other.</p>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-box">
+        <div class="idx">Layer 3</div>
+        <h4>Trust Scoring Engine</h4>
+        <p>Converts verified signals into a single explainable index, with each contribution traceable back to its source and confidence level.</p>
+      </div>
+      <div class="arch-arrow">→</div>
+      <div class="arch-box">
+        <div class="idx">Layer 4</div>
+        <h4>Bank API Layer</h4>
+        <p>Delivers the evidence-backed profile to the destination bank's onboarding or underwriting flow via a versioned REST API.</p>
+      </div>
+    </div>
+    <div class="arch-note">Data layer is non-custodial by design: Credenza is built to broker verification and consent, not to become a long-term store of applicants' raw financial documents.</div>
+  </div>
+</section>
+
+<section id="api">
+  <div class="wrap">
+    <div class="eyebrow">Developer preview</div>
+    <h2>What the bank integration looks like</h2>
+    <p class="section-lead">A mocked example of the API contract — illustrative shape only, not a live or callable endpoint at this stage.</p>
+    <div class="api-grid">
+      <div class="code-block">
+        <div class="cb-label">Request — mock</div>
+        <pre><span class="k">POST</span> /v1/trust-profile
+<span class="c">Authorization: Bearer &lt;bank_api_key&gt;</span>
+<span class="c">Content-Type: application/json</span>
+
+{
+  <span class="s">"applicant_consent_id"</span>: <span class="s">"csn_8f2a1e"</span>,
+  <span class="s">"corridor"</span>: <span class="s">"IR-PT"</span>,
+  <span class="s">"requested_sources"</span>: [
+    <span class="s">"verified_statements"</span>,
+    <span class="s">"onchain_history"</span>,
+    <span class="s">"guarantor_network"</span>
+  ]
+}</pre>
+      </div>
+      <div class="code-block">
+        <div class="cb-label">Response — mock</div>
+        <pre>{
+  <span class="s">"trust_index"</span>: <span class="k">74</span>,
+  <span class="s">"tier"</span>: <span class="s">"established_profile"</span>,
+  <span class="s">"signals"</span>: [
+    { <span class="s">"source"</span>: <span class="s">"verified_statements"</span>,
+      <span class="s">"confidence"</span>: <span class="s">"high"</span> },
+    { <span class="s">"source"</span>: <span class="s">"onchain_history"</span>,
+      <span class="s">"confidence"</span>: <span class="s">"medium"</span> }
+  ],
+  <span class="s">"consent_id"</span>: <span class="s">"csn_8f2a1e"</span>,
+  <span class="s">"generated_at"</span>: <span class="s">"sample — illustrative"</span>
+}</pre>
       </div>
     </div>
   </div>
@@ -280,10 +512,10 @@
         <circle cx="205" cy="70" r="5" fill="#101B2D"/>
         <text x="215" y="74" font-family="IBM Plex Mono" font-size="11" fill="#101B2D">Tallinn (base)</text>
 
-        <!-- Iran - live -->
-        <circle cx="120" cy="180" r="5" fill="#3C6E64"/>
-        <text x="130" y="184" font-family="IBM Plex Mono" font-size="11" fill="#3C6E64">Iran</text>
-        <path d="M205,70 C170,110 150,140 122,176" fill="none" stroke="#3C6E64" stroke-width="1.4" stroke-dasharray="4 3"/>
+        <!-- Iran - prototype -->
+        <circle cx="120" cy="180" r="5" fill="#AD8A54"/>
+        <text x="130" y="184" font-family="IBM Plex Mono" font-size="11" fill="#8C7346">Iran</text>
+        <path d="M205,70 C170,110 150,140 122,176" fill="none" stroke="#AD8A54" stroke-width="1.4" stroke-dasharray="4 3"/>
 
         <!-- Russia - building -->
         <circle cx="260" cy="120" r="5" fill="#AD8A54"/>
@@ -306,7 +538,7 @@
       <h2>One engine, adapted per corridor</h2>
       <p class="section-lead" style="margin-bottom:26px;">Countries with a functioning formal registry connect directly. Countries without one route through multi-source verification with conservative limits.</p>
       <div class="corridor-list">
-        <div class="corridor-item"><div><div>Iran → EU / Americas</div><div class="from">Pilot corridor</div></div><span class="badge live">Live</span></div>
+        <div class="corridor-item"><div><div>Iran → EU / Americas</div><div class="from">Initial corridor</div></div><span class="badge build">Prototype</span></div>
         <div class="corridor-item"><div><div>Russia → EU</div><div class="from">Formal registry available</div></div><span class="badge build">Building</span></div>
         <div class="corridor-item"><div><div>Venezuela → Americas</div><div class="from">Alternative-data model</div></div><span class="badge plan">Planned</span></div>
         <div class="corridor-item"><div><div>Cuba → Americas</div><div class="from">No formal registry</div></div><span class="badge plan">Planned</span></div>
@@ -315,12 +547,88 @@
   </div>
 </section>
 
+<section id="metrics">
+  <div class="wrap">
+    <div class="eyebrow">For investors &amp; the committee</div>
+    <h2>Why the opportunity is sized this way</h2>
+    <p class="section-lead">Directional figures for evaluation purposes — see sources below. Credenza has not yet processed real transactions; these are market-sizing and product-economics estimates, not results.</p>
+    <div class="metrics-grid">
+      <div class="metric-card"><div class="n">~190K<span class="fn">1</span></div><div class="l">people leaving Iran on net every year — one addressable corridor among several targeted</div></div>
+      <div class="metric-card"><div class="n">4.0M<span class="fn">2</span></div><div class="l">Iranians already living abroad — an existing, reachable diaspora base</div></div>
+      <div class="metric-card"><div class="n">API</div><div class="l">per-query pricing model — banks pay per profile pulled, not per user onboarded</div></div>
+      <div class="metric-card"><div class="n">4</div><div class="l">corridors on the roadmap: Iran, Russia, Venezuela, Cuba</div></div>
+    </div>
+    <div class="sources-list">
+      <div class="eyebrow" style="margin-bottom:8px;">Sources</div>
+      <ol>
+        <li>Iran net migration, 2024: United Nations population estimates, via <a href="https://www.macrotrends.net/global-metrics/countries/irn/iran/net-migration" target="_blank">macrotrends.net</a>.</li>
+        <li>Iranian diaspora population, official estimate: <a href="https://en.wikipedia.org/wiki/Iranian_diaspora" target="_blank">Wikipedia — Iranian diaspora</a>, citing national statistics offices.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="founder">
+  <div class="wrap">
+    <div class="eyebrow">Team</div>
+    <h2>Founder</h2>
+    <div class="founder-wrap" style="margin-top:20px;">
+      <div class="founder-avatar">MR</div>
+      <div>
+        <h3>Mohammad Roustaei</h3>
+        <div class="role">Founder — Credenza · Based in Tehran, relocating to build this from Estonia</div>
+        <p>Works inside Iran's banking sector (Bank Sepah), with a first-hand, day-to-day view of exactly where a normal financial history stops being legible the moment someone crosses a border. Credenza started from that specific, personally-felt gap rather than as an abstract market observation. Prior project work includes exploring an export-market venture between Iran and Portugal, which shaped this founder's understanding of what incubators and evaluators actually need to see before they trust a plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="estonia">
+  <div class="wrap">
+    <div class="eyebrow">Why Estonia</div>
+    <h2>Why build this from Tallinn</h2>
+    <p class="section-lead">Estonia is the base of operations, not a market this product targets first — the fit is structural, not sentimental.</p>
+    <div class="estonia-grid">
+      <div class="estonia-card">
+        <h4>EU market access</h4>
+        <p>A company based in Estonia can engage EU banks and payment partners as an EU entity, which matters for a product whose whole premise is cross-border trust.</p>
+      </div>
+      <div class="estonia-card">
+        <h4>Digital-first company infrastructure</h4>
+        <p>e-Residency and Estonia's digital company administration make it practical to run the legal and compliance side of a startup remotely, fully documented.</p>
+      </div>
+      <div class="estonia-card">
+        <h4>A visa track built for exactly this</h4>
+        <p>The Startup Visa programme is explicitly designed for founders bringing a scalable, tech-enabled business to Estonia — which is what this application is prepared for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="compliance">
+  <div class="wrap" style="max-width:900px;">
+    <div class="eyebrow">Compliance &amp; data posture</div>
+    <h2>Designed around consent, not around access</h2>
+    <p class="section-lead">Principles the architecture is being designed to, ahead of any real integration.</p>
+    <div class="compliance-grid">
+      <div class="compliance-item"><div class="ic">✓</div><div><h4>Consent-first by default</h4><p>No source is queried without an explicit, per-source, revocable authorization from the person.</p></div></div>
+      <div class="compliance-item"><div class="ic">§</div><div><h4>GDPR-aligned handling</h4><p>Data minimization, purpose limitation and a documented legal basis are treated as design requirements, not an afterthought.</p></div></div>
+      <div class="compliance-item"><div class="ic">⌘</div><div><h4>Non-custodial data layer</h4><p>Credenza is built to broker and verify, not to become a permanent warehouse of applicants' raw financial documents.</p></div></div>
+      <div class="compliance-item"><div class="ic">⇄</div><div><h4>Evidence, not a black box</h4><p>Banks receive the signal-level evidence behind the index, and always make the final underwriting call themselves.</p></div></div>
+    </div>
+  </div>
+</section>
+
 <section id="about">
   <div class="wrap" style="max-width:760px;">
     <div class="eyebrow">Concept note</div>
     <h2>Why this, why now</h2>
-    <p style="color:var(--text-dim); font-size:15.5px; margin-top:16px;">Global credit-portability products already exist and already work — banks pay for them. What none of them can do is touch a sanctioned corridor. Every year, tens of thousands of Iranians alone move to Europe and the Americas carrying real, provable financial discipline that simply has nowhere to land. Credenza is built specifically for that gap, by someone who has spent years navigating it personally — not as an outside observer, but from inside Iran's banking system.</p>
+    <p style="color:var(--text-dim); font-size:15.5px; margin-top:16px;">Global credit-portability products already exist and already work — banks pay for them. Existing providers have limited practical coverage for sanctioned corridors. Every year, a substantial number of Iranians move to Europe and the Americas carrying real, provable financial discipline that simply has nowhere to land. Credenza is built specifically for that gap, by someone who has spent years navigating it personally as a bank employee inside Iran — not as an outside observer.</p>
     <p style="color:var(--text-dim); font-size:15.5px; margin-top:16px;">This page is a concept demonstration prepared alongside the written business plan for evaluation by Startup Estonia's Startup Committee. No real user data is collected here.</p>
+    <div class="disclaimer-box">
+      <div class="eyebrow">Current status — please read</div>
+      <p><b>Credenza is pre-operational.</b> It does not currently have live operational access to real financial data in Iran, or in any other market. Everything on this page — the interactive trust-profile builder, the sample PDF report, the API request/response examples and every score shown — is a mock-up built with illustrative, non-real data to demonstrate the intended product. No applicant data has been collected, verified or scored by Credenza to date.</p>
+    </div>
   </div>
 </section>
 
@@ -328,7 +636,7 @@
   <div class="wrap">
     <div>
       <div class="brand">Credenza</div>
-      <p>Portable financial identity for the credit-invisible. Concept &amp; demo prepared by Mohammad Roustaei for the Estonia Startup Visa application, August 2026.</p>
+      <p>Portable financial identity for the credit-invisible. Concept &amp; demo prepared by Mohammad Roustaei for the Estonia Startup Visa application, August 2026. Pre-operational — no live financial data is processed by this site or product today.</p>
     </div>
     <div class="mono" style="font-size:12px; color:var(--text-dim);">credenza-demo · concept build</div>
   </div>
@@ -339,11 +647,25 @@
   const seal = document.getElementById('seal');
   const scoreEl = document.getElementById('score');
   const tierEl = document.getElementById('tier');
+  const whyScoreEl = document.getElementById('whyScore');
+  const whyPrefix = document.getElementById('whyPrefix');
+  const whySuffix = document.getElementById('whySuffix');
+  const whyLink = document.getElementById('whyLink');
+  const breakdown = document.getElementById('breakdown');
+  const breakdownList = document.getElementById('breakdownList');
+
+  const BASE = 22;
+  const LABELS = {
+    docs: 'Verified pay slips & statements',
+    chain: 'On-chain transaction history (supplementary)',
+    guarantor: 'Social guarantor network',
+    registry: 'Home-country registry (opt-in)'
+  };
 
   function computeScore(){
-    let base = 22, total = 0;
+    let total = 0;
     rows.forEach(r => { if(r.classList.contains('on')) total += parseInt(r.dataset.w,10); });
-    let score = Math.min(97, base + total);
+    let score = Math.min(97, BASE + total);
     return score;
   }
   function tierFor(score){
@@ -352,13 +674,25 @@
     if(score < 85) return 'Established profile';
     return 'Strong profile';
   }
+  function renderBreakdown(){
+    let rowsHtml = `<div style="display:flex; justify-content:space-between; color:var(--text-dim);"><span>Base coverage</span><span class="mono">${BASE}</span></div>`;
+    rows.forEach(r => {
+      const on = r.classList.contains('on');
+      const label = LABELS[r.dataset.name] || r.dataset.name;
+      const w = r.dataset.w;
+      rowsHtml += `<div style="display:flex; justify-content:space-between; ${on ? '' : 'opacity:.4;'}"><span>${label}${on ? '' : ' (not included)'}</span><span class="mono">${on ? '+' + w : '—'}</span></div>`;
+    });
+    breakdownList.innerHTML = rowsHtml;
+  }
   function render(){
     const s = computeScore();
     scoreEl.textContent = s;
+    whyScoreEl.textContent = s;
     tierEl.textContent = tierFor(s);
     seal.classList.remove('pulse');
     void seal.offsetWidth;
     seal.classList.add('pulse');
+    renderBreakdown();
   }
   rows.forEach(r => {
     r.addEventListener('click', () => {
@@ -366,7 +700,38 @@
       render();
     });
   });
+  whyLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const open = breakdown.style.display !== 'none';
+    breakdown.style.display = open ? 'none' : 'block';
+    whyPrefix.textContent = open ? 'Why' : 'Hide';
+    whySuffix.textContent = open ? '?' : ' breakdown';
+  });
   render();
+
+  // Audience view toggle (For banks / For migrants)
+  const viewBankBtn = document.getElementById('viewBankBtn');
+  const viewMigrantBtn = document.getElementById('viewMigrantBtn');
+  const leadCopy = document.getElementById('leadCopy');
+  const ctaPrimary = document.getElementById('ctaPrimary');
+  const COPY = {
+    bank: {
+      lead: "Credenza turns a newcomer's real financial record — payments, credit conduct, verifiable transaction history — into a portable, consent-based trust profile that a bank in a new country can actually use.",
+      cta: "Try the trust profile builder"
+    },
+    migrant: {
+      lead: "You already built a real financial history — pay slips, on-time payments, a track record. Credenza is built to carry that history with you, with your consent, so it isn't invisible to a bank in your new country.",
+      cta: "See what your profile could look like"
+    }
+  };
+  function setView(v){
+    leadCopy.textContent = COPY[v].lead;
+    ctaPrimary.textContent = COPY[v].cta;
+    viewBankBtn.classList.toggle('active', v === 'bank');
+    viewMigrantBtn.classList.toggle('active', v === 'migrant');
+  }
+  viewBankBtn.addEventListener('click', () => setView('bank'));
+  viewMigrantBtn.addEventListener('click', () => setView('migrant'));
 </script>
 
 </body>
