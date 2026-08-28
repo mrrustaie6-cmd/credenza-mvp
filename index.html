@@ -51,8 +51,7 @@
   }
   nav .wrap{display:flex; align-items:center; justify-content:space-between; height:64px;}
   .brand{display:flex; align-items:center; gap:10px; font-family:'Fraunces',serif; font-size:19px; font-weight:600; color:var(--ink);}
-  .brand .mark{width:22px; height:22px; border-radius:50%; border:1.4px solid var(--brass); position:relative; flex:none;}
-  .brand .mark::after{content:""; position:absolute; inset:5px; border:1px solid var(--brass); border-radius:50%; opacity:.55;}
+  .brand img{width:26px; height:26px; object-fit:contain; flex:none;}
   .navlinks{display:flex; gap:28px; font-size:14px; color:var(--text-dim);}
   .navlinks a{text-decoration:none;}
   .navlinks a:hover{color:var(--ink);}
@@ -288,7 +287,7 @@
 
 <nav>
   <div class="wrap">
-    <div class="brand"><span class="mark"></span>Credenza</div>
+    <div class="brand"><img src="credenza-icon.png" alt="Credenza icon">Credenza</div>
     <div class="navlinks">
       <a href="#demo">Demo</a>
       <a href="#how">How it works</a>
@@ -636,7 +635,7 @@
 <footer>
   <div class="wrap">
     <div>
-      <div class="brand">Credenza</div>
+      <div class="brand"><img src="credenza-icon.png" alt="Credenza icon">Credenza</div>
       <p>Portable financial identity for the credit-invisible. Concept &amp; demo prepared by Mohammad Roustaei for the Estonia Startup Visa application, August 2026. Pre-operational — no live financial data is processed by this site or product today.</p>
     </div>
     <div class="mono" style="font-size:12px; color:var(--text-dim);">credenza-demo · concept build</div>
