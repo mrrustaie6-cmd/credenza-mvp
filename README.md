@@ -40,6 +40,8 @@ The AI logic demonstrated here is intentionally modest and transparent:
 
 This is not a production credit model, and it does not replace underwriting expertise. It is designed to make evidence easier to inspect.
 
+In the current repository, the AI is a mock prototype over synthetic examples. There is no trained production model behind the score, and the score should be treated as an illustrative signal rather than a real credit assessment.
+
 ## Challenges
 
 The concept raises several important limitations and risks:
