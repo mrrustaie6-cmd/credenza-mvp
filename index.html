@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Credenza — Portable Financial Identity</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#101B2D;
@@ -122,10 +122,29 @@
   .seal-copy .v{font-family:'Fraunces', serif; font-size:17px; color:var(--ink);}
   .seal-note{font-size:11.5px; color:var(--text-dim); margin-top:14px; line-height:1.5;}
 
+  .signal-strip {
+    margin-top:16px;
+    border:1px solid #E7DCC7;
+    background:#F7F2E9;
+    color:#5F4425;
+    border-radius:6px;
+    padding:12px 14px;
+    font-size:12.5px;
+    line-height:1.5;
+  }
+  .signal-strip strong { color:#2A2F36; }
+
   /* ===== SECTIONS ===== */
   section{padding:76px 0; border-bottom:1px solid var(--line);}
   section h2{font-size:clamp(24px,3vw,32px); margin:10px 0 14px;}
   section > .wrap > p.section-lead{color:var(--text-dim); max-width:60ch; font-size:15.5px; margin-bottom:44px;}
+
+  .demo-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:22px;}
+  @media (max-width:860px){.demo-grid{grid-template-columns:1fr;}}
+  .demo-card{background:var(--white); border:1px solid var(--line); border-radius:6px; padding:22px 20px;}
+  .demo-card .idx{font-family:'IBM Plex Mono'; font-size:11px; color:var(--brass-dim); margin-bottom:12px; text-transform:uppercase; letter-spacing:.08em;}
+  .demo-card h3{font-size:17px; margin-bottom:8px; font-family:'Fraunces',serif;}
+  .demo-card p{font-size:13.5px; color:var(--text-dim); line-height:1.6;}
 
   .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
   @media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr);}}
@@ -278,7 +297,7 @@
   .compliance-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
   @media (max-width:720px){.compliance-grid{grid-template-columns:1fr;}}
   .compliance-item{display:flex; gap:12px; align-items:flex-start; border:1px solid var(--line); border-radius:6px; padding:16px 18px; background:var(--white);}
-  .compliance-item .ic{width:26px; height:26px; border-radius:50%; border:1.4px solid var(--teal); color:var(--teal); flex:none; display:flex; align-items:center; justify-content:center; font-size:13px; font-family:'IBM Plex Mono';}
+  .compliance-item .ic{width:26px; height:26px; border-radius:50%; border:1.4px solid var(--teal); color:var(--teal); flex:none; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;}
   .compliance-item h4{font-size:13.5px; margin-bottom:4px; color:var(--ink); font-weight:600; font-family:'IBM Plex Sans';}
   .compliance-item p{font-size:12.3px; color:var(--text-dim); line-height:1.5;}
 </style>
@@ -329,7 +348,7 @@
       </div>
       <div class="eyebrow">Cross-border financial identity infrastructure for the credit-invisible</div>
       <h1>Your financial history<br>shouldn't <em>end</em> at the border.</h1>
-      <p class="lead" id="leadCopy">Credenza turns a newcomer's real financial record — payments, credit conduct, verifiable transaction history — into a portable, consent-based trust profile that a bank in a new country can actually use.</p>
+      <p class="lead" id="leadCopy">Credenza turns a newcomer's real financial record — payments, credit conduct, verifiable transaction history — into a portable, consent-based trust profile that a bank in a new country can assess with context and human review.</p>
       <div class="cta-row">
         <a href="#demo" class="btn btn-primary" id="ctaPrimary">Try the trust profile builder</a>
         <a href="#how" class="btn btn-ghost">How it works</a>
@@ -342,7 +361,7 @@
     </div>
 
     <div class="seal-card" id="demo">
-      <div class="persona-box"><b>Sample scenario —</b> Sara, a translator relocating from Tehran to Lisbon, connects a few sources below. This is a mocked walk-through with sample data, not a live account.</div>
+      <div class="persona-box"><b>Sample scenario —</b> Sara, a translator relocating from Tehran to Lisbon, connects a few sources below. This is a mocked walk-through with synthetic data, not a real credit review.</div>
       <div class="kicker">Build a sample trust profile</div>
       <div class="sources">
         <div class="source-row on" data-w="28" data-name="docs">
@@ -365,32 +384,61 @@
       <div class="seal-result">
         <div class="seal" id="seal"><span class="score" id="score">52</span></div>
         <div class="seal-copy">
-          <div class="t">Sample trust index</div>
+          <div class="t">Experimental trust signal</div>
           <div class="v" id="tier">Emerging profile</div>
         </div>
       </div>
-      <a href="#" id="whyLink" class="mono" style="display:inline-block; font-size:11.5px; color:var(--brass-dim); margin-top:12px; text-decoration:underline;"><span id="whyPrefix">Why</span> <span id="whyScore">52</span><span id="whySuffix">?</span></a>
+      <div class="signal-strip">
+        <strong>Important:</strong> this number is not a real credit score and does not imply lending eligibility. It is a synthetic, explainable signal built from a few illustrative inputs to show how the system organizes evidence for a human reviewer.
+      </div>
+      <a href="#" id="whyLink" class="mono" style="display:inline-block; font-size:11.5px; color:var(--brass-dim); margin-top:12px; text-decoration:underline;"><span id="whyPrefix">Why</span> <span id="whySuffix">this score?</span></a>
       <div id="breakdown" style="display:none; margin-top:12px; padding-top:12px; border-top:1px dashed var(--line);">
         <div class="mono" style="font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--text-dim); margin-bottom:8px;">Illustrative scoring breakdown</div>
         <div id="breakdownList" style="display:flex; flex-direction:column; gap:6px; font-size:12.5px;"></div>
-        <div style="font-size:11px; color:var(--text-dim); margin-top:10px;">Weights shown are illustrative only; the production scoring model is defined during the pilot with participating banks.</div>
+        <div style="font-size:11px; color:var(--text-dim); margin-top:10px;">Weights shown are illustrative only. The production scoring model would require a formal validation process, source-specific quality checks, and human oversight.</div>
       </div>
-      <div class="seal-note">Illustrative only. In production, each signal is pulled directly from its source with the user's explicit, revocable consent — never typed in by hand.</div>
+      <div class="seal-note">This is a demo interface. Signals are synthetic and meant to represent evidence aggregation, not to determine creditworthiness or final decisions.</div>
       <div class="trust-badges">
         <span>GDPR-aligned design</span>
         <span>Encrypted in transit &amp; at rest</span>
-        <span>Non-custodial data layer</span>
+        <span>Human review required</span>
       </div>
       <a href="sample-trust-report.pdf" target="_blank" class="sample-link">View sample trust report (PDF, illustrative) →</a>
     </div>
   </div>
 </header>
 
+<section id="ai-demo">
+  <div class="wrap">
+    <div class="eyebrow">AI in this demo</div>
+    <h2>How the prototype uses AI</h2>
+    <p class="section-lead">This part is deliberately narrow and transparent: it classifies synthetic transaction patterns, highlights unusual behaviour for review, and organizes evidence into a single, explainable signal. Nothing here is a final credit verdict.</p>
+
+    <div class="demo-grid">
+      <div class="demo-card">
+        <div class="idx">01 / Labeling</div>
+        <h3>Transaction classification</h3>
+        <p>With fully synthetic examples, the system can assign labels such as regular, unusual, or needs review based on simple transaction features, timing, and amount patterns.</p>
+      </div>
+      <div class="demo-card">
+        <div class="idx">02 / Review triggers</div>
+        <h3>Anomaly flags</h3>
+        <p>Unusual behaviour can be surfaced for human inspection, such as repeated small transfers, large cash-out patterns, or inconsistent source records that deserve context.</p>
+      </div>
+      <div class="demo-card">
+        <div class="idx">03 / Human control</div>
+        <h3>Decision remains with people</h3>
+        <p>Credenza does not decide whether someone is fit for a loan or bank account. It organizes evidence and flags what needs human attention.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="how">
   <div class="wrap">
     <div class="eyebrow">Process</div>
-    <h2>From invisible to underwritable</h2>
-    <p class="section-lead">Four steps, the same for every corridor — only the data adapters underneath change.</p>
+    <h2>From invisible to reviewable</h2>
+    <p class="section-lead">Four steps, the same for every corridor — only the data adapters underneath change. The goal is not to replace judgment, but to make the underlying evidence easier to inspect.</p>
     <div class="steps">
       <div class="step">
         <div class="idx">01 / Consent</div>
@@ -400,22 +448,22 @@
       <div class="step">
         <div class="idx">02 / Verify</div>
         <h3>Signals cross-checked</h3>
-        <p>Verified financial records, guarantors and registries are checked against each other, not taken at face value — on-chain history is one additional signal among these, not the core input.</p>
+        <p>Verified financial records, guarantors and registries are checked against each other, not taken at face value — on-chain history is one additional signal among several, not the core truth source.</p>
       </div>
       <div class="step">
         <div class="idx">03 / Score</div>
-        <h3>Trust profile assembled</h3>
-        <p>A single, explainable index is produced — every point is traceable to a specific signal — with a conservative starting limit in low-data corridors.</p>
+        <h3>Experimental signal assembled</h3>
+        <p>A single, explainable score is produced for demonstration purposes only — every point is traceable to a signal and data quality flag.</p>
       </div>
       <div class="step">
-        <div class="idx">04 / Issue</div>
-        <h3>Bank queries via API</h3>
-        <p>The destination bank calls Credenza's API at the point of onboarding — no manual paperwork on either side.</p>
+        <div class="idx">04 / Review</div>
+        <h3>Human decides</h3>
+        <p>The destination bank or reviewer decides whether the signal is relevant and adequate. The AI is a support tool, not the final adjudicator.</p>
       </div>
     </div>
     <div style="margin-top:36px; border:1px solid var(--line); border-radius:6px; padding:22px 26px; background:var(--white);">
       <div class="eyebrow" style="margin-bottom:10px;">Built for verification, not blind trust</div>
-      <p style="font-size:14px; color:var(--text-dim); max-width:70ch;">Credenza does not ask a bank to trust a score blindly. Each signal behind the index is linked to its source, its verification method and a confidence level. Credenza provides evidence; the bank makes the final underwriting decision.</p>
+      <p style="font-size:14px; color:var(--text-dim); max-width:70ch;">Credenza does not ask a bank to trust a score blindly. Each signal behind the index is linked to its source, its verification status, and its confidence level. In production, the final decision remains with a human reviewer and the institution responsible for compliance.</p>
     </div>
   </div>
 </section>
@@ -424,7 +472,7 @@
   <div class="wrap">
     <div class="eyebrow">System design</div>
     <h2>Architecture, in four layers</h2>
-    <p class="section-lead">No layer stores more than it needs to. The scoring engine never sees raw documents; the bank never sees raw source data.</p>
+    <p class="section-lead">No layer stores more than it needs to. The scoring engine never sees raw documents; the bank never sees raw source data. This is meant to support review rather than replace it.</p>
     <div class="arch-flow">
       <div class="arch-box">
         <div class="idx">Layer 1</div>
@@ -536,7 +584,7 @@
     <div>
       <div class="eyebrow">Corridor rollout</div>
       <h2>One engine, adapted per corridor</h2>
-      <p class="section-lead" style="margin-bottom:26px;">Countries with a functioning formal registry connect directly. Countries without one route through multi-source verification with conservative limits.</p>
+      <p class="section-lead" style="margin-bottom:26px;">Countries with a functioning formal registry connect directly. Countries without one route through multi-source verification with conservative thresholds and human review.</p>
       <div class="corridor-list">
         <div class="corridor-item"><div><div>Iran → EU / Americas</div><div class="from">Initial corridor</div></div><span class="badge build">Prototype</span></div>
         <div class="corridor-item"><div><div>Russia → EU</div><div class="from">Formal registry available</div></div><span class="badge build">Building</span></div>
@@ -551,7 +599,7 @@
   <div class="wrap">
     <div class="eyebrow">For investors &amp; the committee</div>
     <h2>Why the opportunity is sized this way</h2>
-    <p class="section-lead">Directional figures for evaluation purposes — see sources below. Credenza has not yet processed real transactions; these are market-sizing and product-economics estimates, not results.</p>
+    <p class="section-lead">Directional figures for evaluation purposes — see sources below. Credenza has not yet processed real transactions; these are market-sizing and product-economics estimates for concept review.</p>
     <div class="metrics-grid">
       <div class="metric-card"><div class="n">~190K<span class="fn">1</span></div><div class="l">people leaving Iran on net every year — one addressable corridor among several targeted</div></div>
       <div class="metric-card"><div class="n">4.0M<span class="fn">2</span></div><div class="l">Iranians already living abroad — an existing, reachable diaspora base</div></div>
@@ -561,8 +609,8 @@
     <div class="sources-list">
       <div class="eyebrow" style="margin-bottom:8px;">Sources</div>
       <ol>
-        <li>Iran net migration, 2024: United Nations population estimates, via <a href="https://www.macrotrends.net/global-metrics/countries/irn/iran/net-migration" target="_blank">macrotrends.net</a>.</li>
-        <li>Iranian diaspora population, official estimate: <a href="https://en.wikipedia.org/wiki/Iranian_diaspora" target="_blank">Wikipedia — Iranian diaspora</a>, citing national statistics offices.</li>
+        <li>Iran net migration, 2024: United Nations population estimates, via <a href="https://www.macrotrends.net/global-metrics/countries/irn/iran/net-migration" target="_blank">macrotrends.net</a> and recent UN reporting, accessed for directional market context.</li>
+        <li>Iranian diaspora population, official estimate: <a href="https://en.wikipedia.org/wiki/Iranian_diaspora" target="_blank">Wikipedia — Iranian diaspora</a>, used as a public reference for general diaspora size context.</li>
       </ol>
     </div>
   </div>
@@ -577,7 +625,7 @@
       <div>
         <h3>Mohammad Roustaei</h3>
         <div class="role">Founder — Credenza · Based in Tehran, relocating to build this from Estonia</div>
-        <p>Works inside Iran's banking sector (Bank Sepah), with a first-hand, day-to-day view of exactly where a normal financial history stops being legible the moment someone crosses a border. Credenza started from that specific, personally-felt gap rather than as an abstract market observation. Prior project work includes exploring an export-market venture between Iran and Portugal, which shaped this founder's understanding of what incubators and evaluators actually need to see before they trust a plan.</p>
+        <p>Works inside Iran's banking sector (Bank Sepah), with a first-hand, day-to-day view of exactly where a normal financial history stops being legible the moment someone crosses a border. This project is a concept prototype built to explore the problem, not a live financial product.</p>
       </div>
     </div>
   </div>
@@ -609,12 +657,12 @@
   <div class="wrap" style="max-width:900px;">
     <div class="eyebrow">Compliance &amp; data posture</div>
     <h2>Designed around consent, not around access</h2>
-    <p class="section-lead">Principles the architecture is being designed to, ahead of any real integration.</p>
+    <p class="section-lead">Principles the architecture is being designed to, ahead of any real integration. These are not guarantees or legal claims — they define the intended safety model.</p>
     <div class="compliance-grid">
       <div class="compliance-item"><div class="ic">✓</div><div><h4>Consent-first by default</h4><p>No source is queried without an explicit, per-source, revocable authorization from the person.</p></div></div>
-      <div class="compliance-item"><div class="ic">§</div><div><h4>GDPR-aligned handling</h4><p>Data minimization, purpose limitation and a documented legal basis are treated as design requirements, not an afterthought.</p></div></div>
+      <div class="compliance-item"><div class="ic">§</div><div><h4>GDPR-aligned handling</h4><p>Data minimization, purpose limitation and a documented legal basis are treated as design requirements, not afterthoughts.</p></div></div>
       <div class="compliance-item"><div class="ic">⌘</div><div><h4>Non-custodial data layer</h4><p>Credenza is built to broker and verify, not to become a permanent warehouse of applicants' raw financial documents.</p></div></div>
-      <div class="compliance-item"><div class="ic">⇄</div><div><h4>Evidence, not a black box</h4><p>Banks receive the signal-level evidence behind the index, and always make the final underwriting call themselves.</p></div></div>
+      <div class="compliance-item"><div class="ic">⇄</div><div><h4>Evidence, not a black box</h4><p>Banks receive the signal-level evidence behind the index, and always make the final underwriting decision with human oversight.</p></div></div>
     </div>
   </div>
 </section>
@@ -623,11 +671,11 @@
   <div class="wrap" style="max-width:760px;">
     <div class="eyebrow">Concept note</div>
     <h2>Why this, why now</h2>
-    <p style="color:var(--text-dim); font-size:15.5px; margin-top:16px;">Global credit-portability products already exist and already work — banks pay for them. Existing providers have limited practical coverage for sanctioned corridors. Every year, a substantial number of Iranians move to Europe and the Americas carrying real, provable financial discipline that simply has nowhere to land. Credenza is built specifically for that gap, by someone who has spent years navigating it personally as a bank employee inside Iran — not as an outside observer.</p>
-    <p style="color:var(--text-dim); font-size:15.5px; margin-top:16px;">This page is a concept demonstration prepared alongside the written business plan for evaluation by Startup Estonia's Startup Committee. No real user data is collected here.</p>
+    <p style="color:var(--text-dim); font-size:15.5px; margin-top:16px;">Global credit-portability products already exist and already work — banks pay for them. Existing providers have limited reach in certain corridor situations and often do not fit the reality of migrants whose financial history is real but fragmented across borders.</p>
+    <p style="color:var(--text-dim); font-size:15.5px; margin-top:16px;">This page is a concept demonstration prepared alongside the written business plan for evaluation by Startup Estonia's Startup Committee. It is intentionally explicit that the project is pre-operational and not a live credit product.</p>
     <div class="disclaimer-box">
       <div class="eyebrow">Current status — please read</div>
-      <p><b>Credenza is pre-operational.</b> It does not currently have live operational access to real financial data in Iran, or in any other market. Everything on this page — the interactive trust-profile builder, the sample PDF report, the API request/response examples and every score shown — is a mock-up built with illustrative, non-real data to demonstrate the intended product. No applicant data has been collected, verified or scored by Credenza to date.</p>
+      <p><b>Credenza is pre-operational.</b> It does not currently have live operational access to real financial data in Iran, or in any other market. Everything on this page — the interactive score, the sample profile builder, the source weights, and the mock API output — is illustrative and intended to show how the concept could work in a controlled pilot environment.</p>
     </div>
   </div>
 </section>
@@ -636,7 +684,7 @@
   <div class="wrap">
     <div>
       <div class="brand"><img src="credenza-icon.png" alt="Credenza icon">Credenza</div>
-      <p>Portable financial identity for the credit-invisible. Concept &amp; demo prepared by Mohammad Roustaei for the Estonia Startup Visa application, August 2026. Pre-operational — no live financial data is processed by this site or product today.</p>
+      <p>Portable financial identity for the credit-invisible. Concept &amp; demo prepared by Mohammad Roustaei for the Estonia Startup Visa application, August 2026. Pre-operational — no live financial data is processed, and no lending or credit decision is made by this prototype.</p>
     </div>
     <div class="mono" style="font-size:12px; color:var(--text-dim);">credenza-demo · concept build</div>
   </div>
@@ -687,7 +735,6 @@
   function render(){
     const s = computeScore();
     scoreEl.textContent = s;
-    whyScoreEl.textContent = s;
     tierEl.textContent = tierFor(s);
     seal.classList.remove('pulse');
     void seal.offsetWidth;
@@ -705,7 +752,7 @@
     const open = breakdown.style.display !== 'none';
     breakdown.style.display = open ? 'none' : 'block';
     whyPrefix.textContent = open ? 'Why' : 'Hide';
-    whySuffix.textContent = open ? '?' : ' breakdown';
+    whySuffix.textContent = open ? ' this score?' : ' breakdown';
   });
   render();
 
@@ -716,11 +763,11 @@
   const ctaPrimary = document.getElementById('ctaPrimary');
   const COPY = {
     bank: {
-      lead: "Credenza turns a newcomer's real financial record — payments, credit conduct, verifiable transaction history — into a portable, consent-based trust profile that a bank in a new country can actually use.",
+      lead: "Credenza turns a newcomer's real financial record — payments, credit conduct, verifiable transaction history — into a portable, consent-based trust profile that a bank in a new country can assess with context and human review.",
       cta: "Try the trust profile builder"
     },
     migrant: {
-      lead: "You already built a real financial history — pay slips, on-time payments, a track record. Credenza is built to carry that history with you, with your consent, so it isn't invisible to a bank in your new country.",
+      lead: "You already built a real financial history — pay slips, on-time payments, a track record. Credenza is built to carry that history with you, with your consent, so it is not invisible to future institutions and reviewers.",
       cta: "See what your profile could look like"
     }
   };
