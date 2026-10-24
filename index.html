@@ -42,7 +42,6 @@
   }
   .eyebrow::before{content:""; width:18px; height:1px; background:var(--brass-dim); display:inline-block;}
 
-  /* ===== NAV ===== */
   nav{
     position:sticky; top:0; z-index:50;
     background:rgba(238,240,234,0.86);
@@ -57,7 +56,6 @@
   .navlinks a:hover{color:var(--ink);}
   @media (max-width:720px){.navlinks{display:none;}}
 
-  /* ===== HERO ===== */
   header.hero{padding:88px 0 64px; border-bottom:1px solid var(--line);}
   .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:start;}
   @media (max-width:900px){.hero-grid{grid-template-columns:1fr;}}
@@ -79,41 +77,25 @@
   .stat .n{font-family:'IBM Plex Mono'; font-size:26px; color:var(--ink); font-weight:500;}
   .stat .l{font-size:12px; color:var(--text-dim); max-width:16ch; margin-top:4px;}
 
-  /* ===== SEAL / DEMO WIDGET ===== */
   .seal-card{
     background:var(--white); border:1px solid var(--line); border-radius:6px;
     padding:26px; position:relative;
   }
   .seal-card .kicker{font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-dim); margin-bottom:18px;}
   .sources{display:flex; flex-direction:column; gap:10px; margin-bottom:20px;}
-  .source-row{
-    display:flex; align-items:center; justify-content:space-between;
-    border:1px solid var(--line); border-radius:4px; padding:11px 14px;
-    font-size:13.5px; cursor:pointer; user-select:none;
-    transition:border-color .15s ease, background .15s ease;
-  }
+  .source-row{display:flex; align-items:center; justify-content:space-between; border:1px solid var(--line); border-radius:4px; padding:11px 14px; font-size:13.5px; cursor:pointer; user-select:none; transition:border-color .15s ease, background .15s ease;}
   .source-row:hover{border-color:var(--brass);}
   .source-row .name{display:flex; align-items:center; gap:10px;}
   .source-row .dot{width:8px; height:8px; border-radius:50%; background:var(--line); transition:background .2s;}
   .source-row.on{background:#F6F4EC; border-color:var(--brass);}
   .source-row.on .dot{background:var(--teal);}
-  .toggle{
-    width:34px; height:18px; border-radius:20px; background:var(--line); position:relative; flex:none;
-    transition:background .2s;
-  }
+  .toggle{width:34px; height:18px; border-radius:20px; background:var(--line); position:relative; flex:none; transition:background .2s;}
   .toggle::after{content:""; position:absolute; top:2px; left:2px; width:14px; height:14px; border-radius:50%; background:var(--white); transition:left .2s;}
   .source-row.on .toggle{background:var(--teal);}
   .source-row.on .toggle::after{left:18px;}
 
-  .seal-result{
-    border-top:1px dashed var(--line); padding-top:20px; margin-top:4px;
-    display:flex; align-items:center; gap:20px;
-  }
-  .seal{
-    width:74px; height:74px; border-radius:50%; border:1.6px solid var(--brass);
-    display:flex; align-items:center; justify-content:center; flex:none; position:relative;
-    transition:transform .35s cubic-bezier(.2,.8,.3,1), border-color .35s;
-  }
+  .seal-result{border-top:1px dashed var(--line); padding-top:20px; margin-top:4px; display:flex; align-items:center; gap:20px;}
+  .seal{width:74px; height:74px; border-radius:50%; border:1.6px solid var(--brass); display:flex; align-items:center; justify-content:center; flex:none; position:relative; transition:transform .35s cubic-bezier(.2,.8,.3,1), border-color .35s;}
   .seal::before{content:""; position:absolute; inset:6px; border:1px dashed var(--brass); border-radius:50%; opacity:.6;}
   .seal .score{font-family:'IBM Plex Mono'; font-weight:500; font-size:19px; color:var(--ink);}
   .seal.pulse{animation:sealpop .5s ease;}
@@ -121,20 +103,9 @@
   .seal-copy .t{font-size:13px; color:var(--text-dim); margin-bottom:3px;}
   .seal-copy .v{font-family:'Fraunces', serif; font-size:17px; color:var(--ink);}
   .seal-note{font-size:11.5px; color:var(--text-dim); margin-top:14px; line-height:1.5;}
-
-  .signal-strip {
-    margin-top:16px;
-    border:1px solid #E7DCC7;
-    background:#F7F2E9;
-    color:#5F4425;
-    border-radius:6px;
-    padding:12px 14px;
-    font-size:12.5px;
-    line-height:1.5;
-  }
+  .signal-strip{margin-top:16px; border:1px solid #E7DCC7; background:#F7F2E9; color:#5F4425; border-radius:6px; padding:12px 14px; font-size:12.5px; line-height:1.5;}
   .signal-strip strong { color:#2A2F36; }
 
-  /* ===== SECTIONS ===== */
   section{padding:76px 0; border-bottom:1px solid var(--line);}
   section h2{font-size:clamp(24px,3vw,32px); margin:10px 0 14px;}
   section > .wrap > p.section-lead{color:var(--text-dim); max-width:60ch; font-size:15.5px; margin-bottom:44px;}
@@ -154,25 +125,15 @@
   .step h3{font-size:17px; margin-bottom:8px; font-weight:500;}
   .step p{font-size:13.5px; color:var(--text-dim);}
 
-  /* corridor map */
   .corridor-wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center;}
   @media (max-width:900px){.corridor-wrap{grid-template-columns:1fr;}}
-  .map{
-    position:relative; border:1px solid var(--line); border-radius:6px; background:var(--white);
-    height:320px; overflow:hidden;
-  }
+  .map{position:relative; border:1px solid var(--line); border-radius:6px; background:var(--white); height:320px; overflow:hidden;}
   .map svg{width:100%; height:100%;}
   .corridor-list{display:flex; flex-direction:column; gap:0;}
-  .corridor-item{
-    display:flex; justify-content:space-between; align-items:center;
-    padding:16px 0; border-bottom:1px solid var(--line); font-size:14px;
-  }
+  .corridor-item{display:flex; justify-content:space-between; align-items:center; padding:16px 0; border-bottom:1px solid var(--line); font-size:14px;}
   .corridor-item:first-child{padding-top:0;}
   .corridor-item .from{font-family:'IBM Plex Mono'; font-size:12.5px; color:var(--text-dim);}
-  .badge{
-    font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
-    padding:4px 9px; border-radius:20px; border:1px solid;
-  }
+  .badge{font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; padding:4px 9px; border-radius:20px; border:1px solid;}
   .badge.live{color:var(--teal); border-color:var(--teal); background:#EEF5F2;}
   .badge.build{color:var(--brass-dim); border-color:var(--brass); background:#F7F2E9;}
   .badge.plan{color:var(--text-dim); border-color:var(--line); background:var(--paper-2);}
@@ -183,20 +144,14 @@
   footer .brand{margin-bottom:10px;}
 
   ::selection{background:var(--brass); color:var(--white);}
-  @media (prefers-reduced-motion: reduce){
-    *{animation:none !important; transition:none !important;}
-  }
+  @media (prefers-reduced-motion: reduce){*{animation:none !important; transition:none !important;}}
 
-  /* ===== v2 additions ===== */
   .brand{font-family:'Plus Jakarta Sans', sans-serif; font-weight:700; letter-spacing:0.01em;}
   .btn-primary{box-shadow:0 0 0 0 rgba(60,110,100,0); transition:box-shadow .25s ease, background .2s ease;}
   .btn-primary:hover{box-shadow:0 4px 22px -4px rgba(173,138,84,0.55);}
 
   .view-toggle{display:inline-flex; border:1px solid var(--line); border-radius:20px; padding:3px; margin-bottom:22px; background:var(--white);}
-  .view-toggle button{
-    font-family:'IBM Plex Mono'; font-size:11.5px; letter-spacing:.04em; text-transform:uppercase;
-    padding:7px 16px; border-radius:16px; border:none; background:transparent; color:var(--text-dim); cursor:pointer;
-  }
+  .view-toggle button{font-family:'IBM Plex Mono'; font-size:11.5px; letter-spacing:.04em; text-transform:uppercase; padding:7px 16px; border-radius:16px; border:none; background:transparent; color:var(--text-dim); cursor:pointer;}
   .view-toggle button.active{background:var(--ink); color:var(--white);}
 
   .hero-mesh{position:absolute; inset:0; z-index:0; opacity:.5; pointer-events:none;}
@@ -204,96 +159,59 @@
   header.hero > .wrap{position:relative; z-index:1;}
 
   .trust-badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
-  .trust-badges span{
-    font-family:'IBM Plex Mono'; font-size:10px; letter-spacing:.04em; color:var(--text-dim);
-    border:1px solid var(--line); border-radius:20px; padding:5px 10px; display:inline-flex; align-items:center; gap:5px;
-    background:var(--paper);
-  }
+  .trust-badges span{font-family:'IBM Plex Mono'; font-size:10px; letter-spacing:.04em; color:var(--text-dim); border:1px solid var(--line); border-radius:20px; padding:5px 10px; display:inline-flex; align-items:center; gap:5px; background:var(--paper);}
   .trust-badges span::before{content:"✓"; color:var(--teal); font-weight:600;}
 
-  .persona-box{
-    background:#F6F4EC; border:1px dashed var(--brass); border-radius:5px; padding:14px 16px; margin-bottom:18px;
-    font-size:13px; color:var(--text); line-height:1.55;
-  }
+  .persona-box{background:#F6F4EC; border:1px dashed var(--brass); border-radius:5px; padding:14px 16px; margin-bottom:18px; font-size:13px; color:var(--text); line-height:1.55;}
   .persona-box b{color:var(--ink);}
-
-  .sample-link{
-    font-family:'IBM Plex Mono'; font-size:11.5px; color:var(--teal); text-decoration:underline;
-    display:inline-flex; align-items:center; gap:6px; margin-top:10px;
-  }
-
+  .sample-link{font-family:'IBM Plex Mono'; font-size:11.5px; color:var(--teal); text-decoration:underline; display:inline-flex; align-items:center; gap:6px; margin-top:10px;}
   .fn{font-size:10px; vertical-align:super; color:var(--brass-dim); cursor:default;}
   .sources-list{margin-top:26px; padding-top:18px; border-top:1px solid var(--line); font-size:12px; color:var(--text-dim);}
   .sources-list ol{padding-left:18px; display:flex; flex-direction:column; gap:5px;}
   .sources-list a{color:var(--teal); text-decoration:underline;}
-
-  .disclaimer-box{
-    background:#FBF2EC; border:1px solid #E3C7A8; border-radius:6px; padding:18px 22px; margin-top:26px;
-  }
+  .disclaimer-box{background:#FBF2EC; border:1px solid #E3C7A8; border-radius:6px; padding:18px 22px; margin-top:26px;}
   .disclaimer-box .eyebrow{color:#9A5A2A;}
   .disclaimer-box .eyebrow::before{background:#9A5A2A;}
   .disclaimer-box p{font-size:13.5px; color:#5B4634; line-height:1.6;}
 
-  /* architecture */
   .arch-flow{display:flex; gap:0; align-items:stretch; flex-wrap:wrap;}
   @media (max-width:900px){.arch-flow{flex-direction:column;}}
-  .arch-box{
-    flex:1; min-width:190px; background:var(--white); border:1px solid var(--line); border-radius:6px;
-    padding:20px 18px; position:relative;
-  }
+  .arch-box{flex:1; min-width:190px; background:var(--white); border:1px solid var(--line); border-radius:6px; padding:20px 18px; position:relative;}
   .arch-box + .arch-box{margin-left:18px;}
   @media (max-width:900px){.arch-box + .arch-box{margin-left:0; margin-top:18px;}}
   .arch-box .idx{font-family:'IBM Plex Mono'; font-size:11px; color:var(--brass-dim); margin-bottom:10px;}
   .arch-box h4{font-family:'Fraunces',serif; font-size:15.5px; font-weight:500; color:var(--ink); margin-bottom:8px;}
   .arch-box p{font-size:12.5px; color:var(--text-dim); line-height:1.5;}
-  .arch-arrow{
-    display:flex; align-items:center; justify-content:center; color:var(--brass); font-size:18px;
-    padding:0 4px; flex:none;
-  }
+  .arch-arrow{display:flex; align-items:center; justify-content:center; color:var(--brass); font-size:18px; padding:0 4px; flex:none;}
   @media (max-width:900px){.arch-arrow{transform:rotate(90deg); padding:8px 0;}}
-  .arch-note{
-    margin-top:22px; border-left:2px solid var(--teal); padding:4px 0 4px 16px; font-size:13px; color:var(--text-dim);
-  }
+  .arch-note{margin-top:22px; border-left:2px solid var(--teal); padding:4px 0 4px 16px; font-size:13px; color:var(--text-dim);}
 
-  /* API demo */
   .api-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
   @media (max-width:860px){.api-grid{grid-template-columns:1fr;}}
-  .code-block{
-    background:var(--ink); border-radius:6px; padding:20px 22px; overflow-x:auto;
-  }
+  .code-block{background:var(--ink); border-radius:6px; padding:20px 22px; overflow-x:auto;}
   .code-block .cb-label{font-family:'IBM Plex Mono'; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:#8FA3B8; margin-bottom:12px;}
   .code-block pre{font-family:'IBM Plex Mono'; font-size:12px; line-height:1.65; color:#DCE6EC; white-space:pre-wrap; word-break:break-word;}
-  .code-block .k{color:#8FD7C4;}
-  .code-block .s{color:#E0B888;}
-  .code-block .c{color:#7C8A9C;}
+  .code-block .k{color:#8FD7C4;}.code-block .s{color:#E0B888;}.code-block .c{color:#7C8A9C;}
 
-  /* metrics */
   .metrics-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
   @media (max-width:860px){.metrics-grid{grid-template-columns:repeat(2,1fr);}}
   .metric-card{background:var(--white); padding:24px 20px;}
   .metric-card .n{font-family:'IBM Plex Mono'; font-size:24px; color:var(--ink); font-weight:500; margin-bottom:6px;}
   .metric-card .l{font-size:12px; color:var(--text-dim); line-height:1.4;}
 
-  /* founder */
   .founder-wrap{display:grid; grid-template-columns:120px 1fr; gap:28px; align-items:start;}
   @media (max-width:640px){.founder-wrap{grid-template-columns:1fr;}}
-  .founder-avatar{
-    width:104px; height:104px; border-radius:50%; border:1.6px solid var(--brass);
-    display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-size:30px; color:var(--brass-dim);
-    background:#F6F4EC;
-  }
+  .founder-avatar{width:104px; height:104px; border-radius:50%; border:1.6px solid var(--brass); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-size:30px; color:var(--brass-dim); background:#F6F4EC;}
   .founder-wrap h3{font-size:19px; margin-bottom:4px;}
   .founder-wrap .role{font-family:'IBM Plex Mono'; font-size:11.5px; color:var(--text-dim); margin-bottom:14px; letter-spacing:.02em;}
   .founder-wrap p{font-size:14px; color:var(--text-dim); line-height:1.6; max-width:60ch;}
 
-  /* estonia */
   .estonia-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
   @media (max-width:860px){.estonia-grid{grid-template-columns:1fr;}}
   .estonia-card{border:1px solid var(--line); border-radius:6px; padding:20px 20px; background:var(--white);}
   .estonia-card h4{font-size:15px; margin-bottom:8px; font-family:'Fraunces',serif; font-weight:500; color:var(--ink);}
   .estonia-card p{font-size:12.8px; color:var(--text-dim); line-height:1.55;}
 
-  /* compliance */
   .compliance-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
   @media (max-width:720px){.compliance-grid{grid-template-columns:1fr;}}
   .compliance-item{display:flex; gap:12px; align-items:flex-start; border:1px solid var(--line); border-radius:6px; padding:16px 18px; background:var(--white);}
@@ -354,32 +272,20 @@
         <a href="#how" class="btn btn-ghost">How it works</a>
       </div>
       <div class="stat-row">
-        <div class="stat"><div class="n">~190K<span class="fn">1</span></div><div class="l">net emigrants from Iran in 2024 alone (UN estimate)</div></div>
+        <div class="stat"><div class="n">~190K<span class="fn">1</span></div><div class="l">net emigrants from Iran in 2024 alone (directional estimate)</div></div>
         <div class="stat"><div class="n">Limited</div><div class="l">portability across borders under existing international credit systems</div></div>
         <div class="stat"><div class="n">4</div><div class="l">independent signal sources per profile</div></div>
       </div>
     </div>
 
     <div class="seal-card" id="demo">
-      <div class="persona-box"><b>Sample scenario —</b> Sara, a translator relocating from Tehran to Lisbon, connects a few sources below. This is a mocked walk-through with synthetic data, not a real credit review.</div>
+      <div class="persona-box"><b>Sample scenario —</b> Sara, a translator relocating from Tehran to Lisbon, connects a few sources below. This is a mocked walk-through with synthetic data and a single illustrative scenario, not a real credit review.</div>
       <div class="kicker">Build a sample trust profile</div>
       <div class="sources">
-        <div class="source-row on" data-w="28" data-name="docs">
-          <span class="name"><span class="dot"></span>Verified pay slips &amp; statements</span>
-          <span class="toggle"></span>
-        </div>
-        <div class="source-row on" data-w="24" data-name="chain">
-          <span class="name"><span class="dot"></span>On-chain transaction history <span style="color:var(--text-dim); font-weight:400;">— supplementary</span></span>
-          <span class="toggle"></span>
-        </div>
-        <div class="source-row" data-w="22" data-name="guarantor">
-          <span class="name"><span class="dot"></span>Verified guarantor / reference signals</span>
-          <span class="toggle"></span>
-        </div>
-        <div class="source-row" data-w="26" data-name="registry">
-          <span class="name"><span class="dot"></span>Home-country registry (opt-in)</span>
-          <span class="toggle"></span>
-        </div>
+        <div class="source-row on" data-w="28" data-name="docs"><span class="name"><span class="dot"></span>Verified pay slips &amp; statements</span><span class="toggle"></span></div>
+        <div class="source-row on" data-w="24" data-name="chain"><span class="name"><span class="dot"></span>On-chain transaction history <span style="color:var(--text-dim); font-weight:400;">— supplementary</span></span><span class="toggle"></span></div>
+        <div class="source-row" data-w="22" data-name="guarantor"><span class="name"><span class="dot"></span>Verified guarantor / reference signals</span><span class="toggle"></span></div>
+        <div class="source-row" data-w="26" data-name="registry"><span class="name"><span class="dot"></span>Home-country registry (opt-in)</span><span class="toggle"></span></div>
       </div>
       <div class="seal-result">
         <div class="seal" id="seal"><span class="score" id="score">52</span></div>
@@ -389,7 +295,7 @@
         </div>
       </div>
       <div class="signal-strip">
-        <strong>Important:</strong> this number is not a real credit score and does not imply lending eligibility. It is a synthetic, explainable signal built from a few illustrative inputs to show how the system organizes evidence for a human reviewer.
+        <strong>Important:</strong> this is a mock score for one synthetic scenario. It is not a credit score, does not determine lending eligibility, and is not backed by a trained production model.
       </div>
       <a href="#" id="whyLink" class="mono" style="display:inline-block; font-size:11.5px; color:var(--brass-dim); margin-top:12px; text-decoration:underline;"><span id="whyPrefix">Why</span> <span id="whySuffix">this score?</span></a>
       <div id="breakdown" style="display:none; margin-top:12px; padding-top:12px; border-top:1px dashed var(--line);">
@@ -412,7 +318,7 @@
   <div class="wrap">
     <div class="eyebrow">AI in this demo</div>
     <h2>How the prototype uses AI</h2>
-    <p class="section-lead">This part is deliberately narrow and transparent: it classifies synthetic transaction patterns, highlights unusual behaviour for review, and organizes evidence into a single, explainable signal. Nothing here is a final credit verdict.</p>
+    <p class="section-lead">This part is deliberately narrow and transparent: it classifies synthetic transaction patterns, highlights unusual behaviour for review, and organizes evidence into a single, explainable signal. Nothing here is a final credit verdict. The current implementation is a mock, rule-based prototype; no trained production model is used in this repository.</p>
 
     <div class="demo-grid">
       <div class="demo-card">
@@ -438,7 +344,7 @@
   <div class="wrap">
     <div class="eyebrow">Process</div>
     <h2>From invisible to reviewable</h2>
-    <p class="section-lead">Four steps, the same for every corridor — only the data adapters underneath change. The goal is not to replace judgment, but to make the underlying evidence easier to inspect.</p>
+    <p class="section-lead">The workflow below is a proposed design, not a live production system. It shows how evidence could be organized for review and decision support, without claiming that the current repo has implemented a real operating bank workflow.</p>
     <div class="steps">
       <div class="step">
         <div class="idx">01 / Consent</div>
@@ -472,7 +378,7 @@
   <div class="wrap">
     <div class="eyebrow">System design</div>
     <h2>Architecture, in four layers</h2>
-    <p class="section-lead">No layer stores more than it needs to. The scoring engine never sees raw documents; the bank never sees raw source data. This is meant to support review rather than replace it.</p>
+    <p class="section-lead">This is a proposed operating model. None of the steps below are currently deployed or active in the public demo. The purpose is to show a plausible review-and-evidence flow, not a live implementation.</p>
     <div class="arch-flow">
       <div class="arch-box">
         <div class="idx">Layer 1</div>
@@ -506,7 +412,7 @@
   <div class="wrap">
     <div class="eyebrow">Developer preview</div>
     <h2>What the bank integration looks like</h2>
-    <p class="section-lead">A mocked example of the API contract — illustrative shape only, not a live or callable endpoint at this stage.</p>
+    <p class="section-lead">A mocked example of the API contract — illustrative shape only, not a live or callable endpoint at this stage. This is a proposed design for a future integration and is not deployed in the current public demo.</p>
     <div class="api-grid">
       <div class="code-block">
         <div class="cb-label">Request — mock</div>
@@ -525,7 +431,7 @@
 }</pre>
       </div>
       <div class="code-block">
-        <div class="cb-label">Response — mock</div>
+        <div class="cb-label">Response — mock (different synthetic scenario)</div>
         <pre>{
   <span class="s">"trust_index"</span>: <span class="k">74</span>,
   <span class="s">"tier"</span>: <span class="s">"established_profile"</span>,
@@ -547,37 +453,15 @@
   <div class="wrap corridor-wrap">
     <div class="map">
       <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid meet">
-        <!-- faint grid -->
-        <g stroke="#DEE1D6" stroke-width="1">
-          <line x1="0" y1="80" x2="400" y2="80"/>
-          <line x1="0" y1="160" x2="400" y2="160"/>
-          <line x1="0" y1="240" x2="400" y2="240"/>
-          <line x1="100" y1="0" x2="100" y2="320"/>
-          <line x1="200" y1="0" x2="200" y2="320"/>
-          <line x1="300" y1="0" x2="300" y2="320"/>
-        </g>
-        <!-- hub: Tallinn -->
-        <circle cx="205" cy="70" r="5" fill="#101B2D"/>
-        <text x="215" y="74" font-family="IBM Plex Mono" font-size="11" fill="#101B2D">Tallinn (base)</text>
-
-        <!-- Iran - prototype -->
-        <circle cx="120" cy="180" r="5" fill="#AD8A54"/>
-        <text x="130" y="184" font-family="IBM Plex Mono" font-size="11" fill="#8C7346">Iran</text>
+        <g stroke="#DEE1D6" stroke-width="1"><line x1="0" y1="80" x2="400" y2="80"/><line x1="0" y1="160" x2="400" y2="160"/><line x1="0" y1="240" x2="400" y2="240"/><line x1="100" y1="0" x2="100" y2="320"/><line x1="200" y1="0" x2="200" y2="320"/><line x1="300" y1="0" x2="300" y2="320"/></g>
+        <circle cx="205" cy="70" r="5" fill="#101B2D"/><text x="215" y="74" font-family="IBM Plex Mono" font-size="11" fill="#101B2D">Tallinn (base)</text>
+        <circle cx="120" cy="180" r="5" fill="#AD8A54"/><text x="130" y="184" font-family="IBM Plex Mono" font-size="11" fill="#8C7346">Iran</text>
         <path d="M205,70 C170,110 150,140 122,176" fill="none" stroke="#AD8A54" stroke-width="1.4" stroke-dasharray="4 3"/>
-
-        <!-- Russia - building -->
-        <circle cx="260" cy="120" r="5" fill="#AD8A54"/>
-        <text x="270" y="124" font-family="IBM Plex Mono" font-size="11" fill="#AD8A54">Russia</text>
+        <circle cx="260" cy="120" r="5" fill="#AD8A54"/><text x="270" y="124" font-family="IBM Plex Mono" font-size="11" fill="#AD8A54">Russia</text>
         <path d="M205,70 C230,85 250,100 258,116" fill="none" stroke="#AD8A54" stroke-width="1.4" stroke-dasharray="4 3"/>
-
-        <!-- Cuba - planned -->
-        <circle cx="70" cy="260" r="5" fill="#9AA093"/>
-        <text x="80" y="264" font-family="IBM Plex Mono" font-size="11" fill="#7C8272">Cuba</text>
+        <circle cx="70" cy="260" r="5" fill="#9AA093"/><text x="80" y="264" font-family="IBM Plex Mono" font-size="11" fill="#7C8272">Cuba</text>
         <path d="M205,70 C150,150 100,220 74,256" fill="none" stroke="#9AA093" stroke-width="1.2" stroke-dasharray="2 4"/>
-
-        <!-- Venezuela - planned -->
-        <circle cx="150" cy="280" r="5" fill="#9AA093"/>
-        <text x="160" y="284" font-family="IBM Plex Mono" font-size="11" fill="#7C8272">Venezuela</text>
+        <circle cx="150" cy="280" r="5" fill="#9AA093"/><text x="160" y="284" font-family="IBM Plex Mono" font-size="11" fill="#7C8272">Venezuela</text>
         <path d="M205,70 C190,160 175,230 154,276" fill="none" stroke="#9AA093" stroke-width="1.2" stroke-dasharray="2 4"/>
       </svg>
     </div>
@@ -599,18 +483,18 @@
   <div class="wrap">
     <div class="eyebrow">For investors &amp; the committee</div>
     <h2>Why the opportunity is sized this way</h2>
-    <p class="section-lead">Directional figures for evaluation purposes — see sources below. Credenza has not yet processed real transactions; these are market-sizing and product-economics estimates for concept review.</p>
+    <p class="section-lead">Directional figures for evaluation purposes — see sources below. Credenza has not yet processed real transactions; these are market-sizing and product-economics estimates for concept review. The figures are intentionally treated as directional estimates and should not be read as audited or operational market data.</p>
     <div class="metrics-grid">
-      <div class="metric-card"><div class="n">~190K<span class="fn">1</span></div><div class="l">people leaving Iran on net every year — one addressable corridor among several targeted</div></div>
-      <div class="metric-card"><div class="n">4.0M<span class="fn">2</span></div><div class="l">Iranians already living abroad — an existing, reachable diaspora base</div></div>
+      <div class="metric-card"><div class="n">~190K<span class="fn">1</span></div><div class="l">people leaving Iran on net every year — directional estimate for concept sizing</div></div>
+      <div class="metric-card"><div class="n">~4M<span class="fn">2</span></div><div class="l">approximate diaspora stock in the public literature, used as a broad directional estimate and not a formal census count</div></div>
       <div class="metric-card"><div class="n">API</div><div class="l">per-query pricing model — banks pay per profile pulled, not per user onboarded</div></div>
       <div class="metric-card"><div class="n">4</div><div class="l">corridors on the roadmap: Iran, Russia, Venezuela, Cuba</div></div>
     </div>
     <div class="sources-list">
       <div class="eyebrow" style="margin-bottom:8px;">Sources</div>
       <ol>
-        <li>Iran net migration, 2024: United Nations population estimates, via <a href="https://www.macrotrends.net/global-metrics/countries/irn/iran/net-migration" target="_blank">macrotrends.net</a> and recent UN reporting, accessed for directional market context.</li>
-        <li>Iranian diaspora population, official estimate: <a href="https://en.wikipedia.org/wiki/Iranian_diaspora" target="_blank">Wikipedia — Iranian diaspora</a>, used as a public reference for general diaspora size context.</li>
+        <li><strong>Net migration for Iran:</strong> <a href="https://data.worldbank.org/indicator/SM.POP.NETM?locations=IR" target="_blank">World Bank — Net migration (IRN)</a>. Used as a directional estimate of net migration for concept sizing; figures vary slightly by source and year.</li>
+        <li><strong>International migration stock / diaspora context:</strong> <a href="https://www.un.org/development/desa/pd/content/international-migration" target="_blank">UN DESA — International Migration</a>. Used as a broad public source for diaspora and migration context; not a formal census or audited market estimate.</li>
       </ol>
     </div>
   </div>
@@ -637,18 +521,9 @@
     <h2>Why build this from Tallinn</h2>
     <p class="section-lead">Estonia is the base of operations, not a market this product targets first — the fit is structural, not sentimental.</p>
     <div class="estonia-grid">
-      <div class="estonia-card">
-        <h4>EU market access</h4>
-        <p>A company based in Estonia can engage EU banks and payment partners as an EU entity, which matters for a product whose whole premise is cross-border trust.</p>
-      </div>
-      <div class="estonia-card">
-        <h4>Digital-first company infrastructure</h4>
-        <p>e-Residency and Estonia's digital company administration make it practical to run the legal and compliance side of a startup remotely, fully documented.</p>
-      </div>
-      <div class="estonia-card">
-        <h4>A visa track built for exactly this</h4>
-        <p>The Startup Visa programme is explicitly designed for founders bringing a scalable, tech-enabled business to Estonia — which is what this application is prepared for.</p>
-      </div>
+      <div class="estonia-card"><h4>EU market access</h4><p>A company based in Estonia can engage EU banks and payment partners as an EU entity, which matters for a product whose whole premise is cross-border trust.</p></div>
+      <div class="estonia-card"><h4>Digital-first company infrastructure</h4><p>e-Residency and Estonia's digital company administration make it practical to run the legal and compliance side of a startup remotely, fully documented.</p></div>
+      <div class="estonia-card"><h4>A visa track built for exactly this</h4><p>The Startup Visa programme is explicitly designed for founders bringing a scalable, tech-enabled business to Estonia — which is what this application is prepared for.</p></div>
     </div>
   </div>
 </section>
@@ -686,7 +561,7 @@
       <div class="brand"><img src="credenza-icon.png" alt="Credenza icon">Credenza</div>
       <p>Portable financial identity for the credit-invisible. Concept &amp; demo prepared by Mohammad Roustaei for the Estonia Startup Visa application, August 2026. Pre-operational — no live financial data is processed, and no lending or credit decision is made by this prototype.</p>
     </div>
-    <div class="mono" style="font-size:12px; color:var(--text-dim);">credenza-demo · concept build</div>
+    <div class="mono" style="font-size:12px; color:var(--text-dim);">credenza-demo · Building AI course project</div>
   </div>
 </footer>
 
@@ -695,26 +570,19 @@
   const seal = document.getElementById('seal');
   const scoreEl = document.getElementById('score');
   const tierEl = document.getElementById('tier');
-  const whyScoreEl = document.getElementById('whyScore');
-  const whyPrefix = document.getElementById('whyPrefix');
-  const whySuffix = document.getElementById('whySuffix');
   const whyLink = document.getElementById('whyLink');
   const breakdown = document.getElementById('breakdown');
   const breakdownList = document.getElementById('breakdownList');
+  const whyPrefix = document.getElementById('whyPrefix');
+  const whySuffix = document.getElementById('whySuffix');
 
   const BASE = 22;
-  const LABELS = {
-    docs: 'Verified pay slips & statements',
-    chain: 'On-chain transaction history (supplementary)',
-    guarantor: 'Verified guarantor / reference signals',
-    registry: 'Home-country registry (opt-in)'
-  };
+  const LABELS = { docs: 'Verified pay slips & statements', chain: 'On-chain transaction history (supplementary)', guarantor: 'Verified guarantor / reference signals', registry: 'Home-country registry (opt-in)' };
 
   function computeScore(){
     let total = 0;
     rows.forEach(r => { if(r.classList.contains('on')) total += parseInt(r.dataset.w,10); });
-    let score = Math.min(97, BASE + total);
-    return score;
+    return Math.min(97, BASE + total);
   }
   function tierFor(score){
     if(score < 45) return 'Insufficient signal';
@@ -736,17 +604,10 @@
     const s = computeScore();
     scoreEl.textContent = s;
     tierEl.textContent = tierFor(s);
-    seal.classList.remove('pulse');
-    void seal.offsetWidth;
-    seal.classList.add('pulse');
+    seal.classList.remove('pulse'); void seal.offsetWidth; seal.classList.add('pulse');
     renderBreakdown();
   }
-  rows.forEach(r => {
-    r.addEventListener('click', () => {
-      r.classList.toggle('on');
-      render();
-    });
-  });
+  rows.forEach(r => { r.addEventListener('click', () => { r.classList.toggle('on'); render(); }); });
   whyLink.addEventListener('click', (e) => {
     e.preventDefault();
     const open = breakdown.style.display !== 'none';
@@ -754,9 +615,9 @@
     whyPrefix.textContent = open ? 'Why' : 'Hide';
     whySuffix.textContent = open ? ' this score?' : ' breakdown';
   });
+
   render();
 
-  // Audience view toggle (For banks / For migrants)
   const viewBankBtn = document.getElementById('viewBankBtn');
   const viewMigrantBtn = document.getElementById('viewMigrantBtn');
   const leadCopy = document.getElementById('leadCopy');
